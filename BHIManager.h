@@ -13,7 +13,6 @@
 + (BOOL)copyBio;
 + (BOOL)Padlock;
 + (BOOL)keepDeletedMessage;
-+ (BOOL)disableAutoAdvance;
 + (BOOL)hideLastSeen;
 + (BOOL)noScreenShotAlert;
 + (BOOL)unlimtedReply;
