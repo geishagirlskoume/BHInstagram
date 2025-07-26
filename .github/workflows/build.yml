@@ -1,4 +1,4 @@
-name: Build and Release BHTwitter
+name: Build and Release BHInstagram
 
 on:
   workflow_dispatch:
