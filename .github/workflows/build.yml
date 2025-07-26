@@ -103,18 +103,18 @@ jobs:
         env:
           THEOS: ${{ github.workspace }}/theos
 
-      - name: Get BHTinstagram Version
+      - name: Get BHInstagram Version
         run: |
           BHTWITTER_VERSION=$(awk '/Version:/ {print $2}' main/control)
           echo "BHTWITTER_VERSION=${BHTWITTER_VERSION}" >> "$GITHUB_ENV"
           echo "$BHTWITTER_VERSION"
 
-      - name: Prepare X iPA
+      - name: Prepare Instagram iPA
         if: inputs.deploy_format == 'sideloaded' || inputs.deploy_format == 'trollstore'
         run: |
           wget "$IPA_URL" --no-verbose -O main/packages/com.burbn.instagram
           unzip -q main/packages/com.burbn.instagram.ipa -d main/tmp
-          # Get the version number of the X app and store it
+          # Get the version number of the Instagram app and store it
           X_VERSION=$(grep -A 1 '<key>CFBundleShortVersionString</key>' main/tmp/Payload/instagram.app/Info.plist |
             grep '<string>' | awk -F'[><]' '{print $3}')
           echo "X_VERSION=${X_VERSION}" >> "$GITHUB_ENV"
