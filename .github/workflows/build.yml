@@ -112,7 +112,7 @@ jobs:
       - name: Prepare Instagram iPA
         if: inputs.deploy_format == 'sideloaded' || inputs.deploy_format == 'trollstore'
         run: |
-          wget "$IPA_URL" --no-verbose -O main/packages/com.burbn.instagram
+          wget "$IPA_URL" --no-verbose -O main/packages/com.burbn.instagram.ipa
           unzip -q main/packages/com.burbn.instagram.ipa -d main/tmp
           # Get the version number of the Instagram app and store it
           X_VERSION=$(grep -A 1 '<key>CFBundleShortVersionString</key>' main/tmp/Payload/instagram.app/Info.plist |
