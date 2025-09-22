@@ -115,7 +115,7 @@ jobs:
           wget "$IPA_URL" --no-verbose -O main/packages/com.burbn.instagram.ipa
           unzip -q main/packages/com.burbn.instagram.ipa -d main/tmp
           # Get the version number of the Instagram app and store it
-          INSTAGRAM_VERSION=$(grep -A 1 '<key>CFBundleShortVersionString</key>' main/tmp/Payload/instagram.app/Info.plist |
+          INSTAGRAM_VERSION=$(grep -A 1 '<key>CFBundleShortVersionString</key>' main/tmp/Payload/Instagram.app/Info.plist |
             grep '<string>' | awk -F'[><]' '{print $3}')
           echo "INSTAGRAM_VERSION=${INSTAGRAM_VERSION}" >> "$GITHUB_ENV"
           echo "$INSTAGRAM_VERSION"
