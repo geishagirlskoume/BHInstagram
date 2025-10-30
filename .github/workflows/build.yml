@@ -13,13 +13,13 @@ on:
         default: "14.0"
         required: true
       decrypted_ipa_url:
-        description: "Direct URL of the decrypted X ipa"
+        description: "Direct URL of the decrypted Instagram ipa"
         default: ""
         required: true
         type: string
       deploy_format:
         description: "Deployment format"
-        default: rootfull
+        default: sideloaded
         required: true
         type: choice
         options:
